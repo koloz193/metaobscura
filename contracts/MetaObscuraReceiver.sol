@@ -10,6 +10,13 @@ import "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/finance/PaymentSplitterUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
+/*
+    “I never am really satisfied that I understand anything; because, 
+    understand it well as I may, my comprehension can only be an infinitesimal 
+    fraction of all I want to understand about the many connections and 
+    relations which occur to me.” Ada Lovelace
+*/
+
 /// @title MetaObscuraReceiver
 /// @author koloz
 /// @notice This contract act as the receiver and claiming interface for MetaObscura.
@@ -94,15 +101,6 @@ contract MetaObscuraReceiver is
         }
     }
 
-    /**
-     * @dev The Ether received will be logged with {PaymentReceived} events. Note that these events are not fully
-     * reliable: it's possible for a contract to receive Ether without triggering this function. This only affects the
-     * reliability of the events, and not the actual splitting of Ether.
-     *
-     * To learn more about this see the Solidity documentation for
-     * https://solidity.readthedocs.io/en/latest/contracts.html#fallback-function[fallback
-     * functions].
-     */
     receive() external payable virtual {}
 
     /**
