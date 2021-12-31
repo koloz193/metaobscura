@@ -234,6 +234,35 @@ contract MetaObscuraReceiver is
     }
 
     /**
+     * @dev View computing the pending payment of an `account` given the token historical balances and
+     * already released amounts.
+     */
+    function pendingPayment(address account) public view returns (uint256) {
+        uint256 totalReceived = address(this).balance + totalReleased();
+        uint256 alreadyReleased = released(account);
+
+        return
+            (totalReceived * _shares[account]) / _totalShares - alreadyReleased;
+    }
+
+    /**
+     * @dev View computing the pending payment of an `account` given the token historical balances and
+     * already released amounts.
+     */
+    function pendingPayment(address account, IERC20Upgradeable token)
+        public
+        view
+        returns (uint256)
+    {
+        uint256 totalReceived = token.balanceOf(address(this)) +
+            totalReleased(token);
+        uint256 alreadyReleased = released(token, account);
+
+        return
+            (totalReceived * _shares[account]) / _totalShares - alreadyReleased;
+    }
+
+    /**
      * @dev internal logic for computing the pending payment of an `account` given the token historical balances and
      * already released amounts.
      */

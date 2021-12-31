@@ -4,6 +4,7 @@ import '@openzeppelin/hardhat-upgrades';
 import {
   privateKey,
   mainnetNodeUrl,
+  etherscanAPIKey
 } from "./secrets.json";
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -28,5 +29,8 @@ export default {
         gasMultiplier: 2,
         timeout: 100000,
     },
-},
+  },
+  etherscan: {
+    apiKey: etherscanAPIKey,
+  },
 };

@@ -14,9 +14,9 @@ async function main() {
   const receiverProxy = await upgrades.deployProxy(
     MetaObscuraReceiver, 
     [
-      "0xCAe2874732aCB94FF38c98b5812395F0f342fd69",
+      "0xcae2874732acb94ff38c98b5812395f0f342fd69",
       90,
-      "0xD5A498Bbc6D21E4E1cdBB8fec58e3eCD7124FB43",
+      "0x6d04ff6fd2c61f41fc1c8e461ce7a9908c3e4a62",
       1,
       10
     ], 
