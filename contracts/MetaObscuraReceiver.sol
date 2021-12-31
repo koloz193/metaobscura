@@ -103,9 +103,7 @@ contract MetaObscuraReceiver is
      * https://solidity.readthedocs.io/en/latest/contracts.html#fallback-function[fallback
      * functions].
      */
-    receive() external payable virtual {
-        emit PaymentReceived(_msgSender(), msg.value);
-    }
+    receive() external payable virtual {}
 
     /**
      * @dev Getter for the total shares held by payees.
