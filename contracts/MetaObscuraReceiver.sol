@@ -11,6 +11,18 @@ import "@openzeppelin/contracts-upgradeable/finance/PaymentSplitterUpgradeable.s
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
 /*
+      ▄▄▄▄▄        ▄▄▄▄▄▄ -▄▄▄▄▄▄▄▄▄▄▄⌐ ▄▄▄▄▄▄▄▄▄▄▄▄▄     ▄▄▄▄           ,▄▄▄▄▄,     .▄▄▄▄▄▄▄▄,         ,▄▄∞∞▄,          ▄▄▄▄▄,    .▄▄▄▄▄▄⌐    w▄▄▄  ▄▄▄▄▄▄▄▄▄             ▄▄▄▄▄
+       █████      ▐████     ████     ▐▌ █   ▐███▌   █     █████        ▄▀  ▀▀████▄     ████   ███▄    ╓██      ██     ▄▀      ▀█▄▄   ████        ▌    ▐███▌  ▀███▄         ▐████
+       █████▌     █████     ████      ▌ `   ▐███▌   ▐     ▌████▄     ,█       ▀████▄   ████   ████▌   ███       █    ██         ██   ████        ▌    ▐███▌   ████▌        █████▌
+       █ ████    █ ████     ████      `     ▐███▌        █ ▐████     ██        ▐████µ  ████   ████    ████▄         ██▌          █   ████        ▌    ▐███▌   ████▌       ▐` ████
+       █ ▐████  ▐▀ ████     ████   ▐        ▐███▌       ,▌  ████▌   ▐██     ,   ▐████  ████⌐▄██▀       ▀█████▄▄     ██▌          █   ████        ▌    ▐███▌  ▄██▀         █  ▐████
+       █  ████▌ ▌  ████     ████""▀█        ▐███▌       █    ████   ████   ^█═   ▐███  ████   ▀███▄      ▀██████▄  ▐███              ████        ▌    ▐███▌▀██▄          █    ████▄
+       █   █████   ████     ████            ▐███▌      ▐     ▐████  ▐███▌         ███  ████     ████  ▌     ▀█████▄ ████             ████        ▌    ▐███▌ ████        ╒▌    ▐████
+       █   ▐███-   ████     ████      ,     ▐███▌      █`````"████▄  ████▄        ██   ████     ████▌ █        ████ █████            ████        ▌    ▐███▌ ▐███▌       █"`````████▌
+       █    ██▌    ████     ████      █     ▐███▌     █       ▐████   █████       █▀   ████     ████  █▄       ▐███  █████▄       ▀  ▐███       ▐-    ▐███▌  ████      ▐-       ████
+       █     ▀     ████     ████     ,█     ▐███▌    ▐▌        ████▌   ▀█████▄,,▄▀     ████   ▄███▀   ▌▀▄     ,██▀    ▀█████▄,,▄∞     ▀███     ▄▀     ▐███▌   ███▄     █        ▐████
+      ▀▀▀`        ▀▀▀▀▀▀' "▀▀▀▀▀````▀▀▀    "▀▀▀▀▀'  '▀▀       `▀▀▀▀▀▀     ▀▀▀▀▀      `▀▀▀▀▀`"             ▀""▀           ▀▀▀▀▀-          `▀"""`      "▀▀▀▀▀"    ▀▀▀▀ `▀▀`       ▀▀▀▀▀▀`
+
     “I never am really satisfied that I understand anything; because, 
     understand it well as I may, my comprehension can only be an infinitesimal 
     fraction of all I want to understand about the many connections and 
@@ -36,7 +48,6 @@ contract MetaObscuraReceiver is
         address to,
         uint256 amount
     );
-    event PaymentReceived(address from, uint256 amount);
 
     uint256 private _totalShares;
     uint256 private _totalReleased;
